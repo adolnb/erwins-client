@@ -131,7 +131,12 @@ export default function EditUserView() {
                                     </div>
                                     <div className="col-md-4">
                                         <div className="form-floating">
-                                            <input type="text" id="lastname1" className={`form-control border border-2 ${getErrorMessage('lastname1') ? 'is-invalid' : ''}`} {...register('lastname1', { required: true })} />
+                                            <input type="text" id="lastname1" className={`form-control border border-2 ${getErrorMessage('lastname1') ? 'is-invalid' : ''}`} {...register('lastname1', { required: true,
+                                                pattern: {
+                                                    value: /^[A-Za-zÀ-ÿ\s]+$/,
+                                                    message: 'El apellido no debe contener números'
+                                                }
+                                             })} />
                                             <label htmlFor="lastname1">Apellido Paterno</label>
                                             {getErrorMessage('lastname1') && (
                                                 <div className="invalid-feedback">
@@ -142,7 +147,12 @@ export default function EditUserView() {
                                     </div>
                                     <div className="col-md-4">
                                         <div className="form-floating">
-                                            <input type="text" id="lastname2" className={`form-control border border-2 ${getErrorMessage('lastname2') ? 'is-invalid' : ''}`} {...register('lastname2', { required: true })} />
+                                            <input type="text" id="lastname2" className={`form-control border border-2 ${getErrorMessage('lastname2') ? 'is-invalid' : ''}`} {...register('lastname2', { required: true,
+                                                pattern: {
+                                                    value: /^[A-Za-zÀ-ÿ\s]+$/,
+                                                    message: 'El apellido no debe contener números'
+                                                }
+                                             })} />
                                             <label htmlFor="lastname2">Apellido Materno</label>
                                             {getErrorMessage('lastname2') && (
                                                 <div className="invalid-feedback">

@@ -66,7 +66,12 @@ export default function RegisterView() {
                                 </div>
                                 <div className="col-md-6">
                                     <div className="form-floating mb-3">
-                                        <input type="text" id="lastname1" className={`form-control border border-2 ${getErrorMessage('lastname1') ? 'is-invalid' : ''}`} {...register('lastname1', { required: true })} />
+                                        <input type="text" id="lastname1" className={`form-control border border-2 ${getErrorMessage('lastname1') ? 'is-invalid' : ''}`} {...register('lastname1', { required: true,
+                                            pattern: {
+                                                value: /^[A-Za-zÀ-ÿ\s]+$/,
+                                                message: 'El apellido no debe contener números'
+                                            }
+                                         })} />
                                         <label className="text-secondary">Apellido Paterno</label>
                                         {getErrorMessage('lastname1') && (
                                             <div className="invalid-feedback">
@@ -79,7 +84,12 @@ export default function RegisterView() {
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="form-floating mb-3">
-                                        <input type="text" id="lastname2" className={`form-control border border-2 ${getErrorMessage('lastname2') ? 'is-invalid' : ''}`} {...register('lastname2', { required: true })} />
+                                        <input type="text" id="lastname2" className={`form-control border border-2 ${getErrorMessage('lastname2') ? 'is-invalid' : ''}`} {...register('lastname2', { required: true,
+                                            pattern: {
+                                                value: /^[A-Za-zÀ-ÿ\s]+$/,
+                                                message: 'El apellido no debe contener números'
+                                            }
+                                         })} />
                                         <label className="text-secondary">Apellido Materno</label>
                                         {getErrorMessage('lastname2') && (
                                             <div className="invalid-feedback">
